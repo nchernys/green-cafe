@@ -1,0 +1,567 @@
+html,
+body {
+  width: 100%;
+  min-width: 315px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Patrick Hand", cursive;
+  font-family: "Afacad", sans-serif;
+  background-color: rgb(45, 168, 63);
+}
+
+#welcome {
+  width: 100%;
+  height: auto;
+  background-image: url("images/dinner1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+header {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1em;
+  padding: 0.5em 2em;
+}
+
+header .name {
+  width: auto;
+  color: rgba(255, 255, 255);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5em;
+}
+
+header .navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1em;
+}
+
+header .li-cart-nav {
+  color: rgba(255, 255, 255);
+  cursor: pointer;
+}
+
+.li-cart-nav {
+  display: flex;
+}
+
+.cart-nav-no {
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0.2em 0.4em;
+}
+
+header a {
+  text-decoration: none;
+  color: rgba(255, 255, 255);
+}
+
+#welcome .overlay {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0 0 2em 0;
+  position: relative;
+}
+
+#welcome .overlay .left {
+  width: 80%;
+  height: auto;
+  min-height: calc(98vh - 5em);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 0 0 2em;
+}
+
+#welcome .overlay .left h1 {
+  font-size: calc(3.5em + 5%);
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  font-family: "Afacad", sans-serif;
+  color: white;
+}
+
+#welcome .overlay .left p {
+  font-family: "Afacad", sans-serif;
+  font-size: calc(1em + 1vw);
+  color: white;
+}
+
+.img-arrow {
+  position: absolute;
+  z-index: 3;
+  width: 3em;
+  height: 1.5em;
+  bottom: 2em;
+  left: calc(50% - 3em / 2);
+  animation: arrow infinite ease-in-out 1s;
+}
+
+@keyframes arrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.5em);
+  }
+}
+
+@media screen and (min-width: 350px) {
+  #welcome .overlay .left h1 {
+    font-size: calc(5.5em + 5%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    font-size: 1.5em;
+  }
+
+  #welcome .overlay .left {
+    width: 80%;
+    height: auto;
+    min-height: calc(98vh - 6em);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0 0 2em;
+  }
+
+  #welcome .overlay .left h1 {
+    font-size: calc(6em + 2vw);
+  }
+  #welcome .overlay .left p {
+    font-size: calc(1em + 1vw);
+  }
+
+  .img-arrow {
+    width: 4em;
+    height: 2em;
+    bottom: 3em;
+    left: calc(50% - 6em / 2);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header {
+    font-size: 1.3em;
+  }
+
+  #welcome .overlay .left {
+    width: 80%;
+    height: calc(98vh - 6em);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0 0 4em;
+  }
+
+  #welcome .overlay .left h1 {
+    font-size: calc(8em + 2%);
+  }
+  #welcome .overlay .left p {
+    font-size: calc(2em + 1%);
+  }
+
+  .img-arrow {
+    width: 4em;
+    height: 2em;
+    bottom: 2em;
+    left: calc(50% - 4em / 2);
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  header {
+    font-size: 1.7em;
+  }
+
+  #welcome .overlay .left {
+    min-height: calc(98vh - 10em);
+  }
+
+  .img-arrow {
+    width: 6em;
+    height: 3em;
+    bottom: 3em;
+    left: calc(50% - 6em / 2);
+  }
+}
+
+/* -----------------------  MENU ------------------------------ */
+
+#menu {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+  font-size: 1em;
+}
+
+#menu .scroll {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.menu-item-wrapper {
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
+.menu-item {
+  width: 17em;
+  height: 17em;
+  border-radius: 50em;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30% 70% 20% 60% / 60% 30% 70% 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blob {
+  width: 14em;
+  height: 14em;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.blob-caption {
+  width: 100%;
+  height: 4em;
+  margin: 1em 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blob-caption button {
+  padding: 0.5em 1.5em;
+  border-radius: 5em;
+  margin: 0.5em;
+  color: rgb(45, 168, 63);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+.blob-caption button:active {
+  transform: translate(2px, 2px);
+  background-color: rgb(30, 78, 30);
+  color: white;
+}
+
+@media screen and (min-width: 600px) {
+  #menu .scroll {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 1em;
+  }
+
+  .menu-item {
+    width: 14em;
+    height: 14em;
+    margin: 0 0.5em;
+  }
+
+  .blob {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #menu .scroll {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 1em;
+  }
+
+  .menu-item {
+    width: 12em;
+    height: 12em;
+    margin: 0 0.5em;
+  }
+
+  .blob {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  #menu {
+    font-size: 20px;
+  }
+}
+
+/* -----------------------  PEOPLE ------------------------------ */
+
+#people {
+  width: 100%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 1);
+  background-image: url("images/14_sep_c.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+  background-size: 30em;
+}
+
+.overlay_people {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.overlay_people .scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 3em 0;
+  margin: 0 auto;
+}
+
+.person {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin: 1.5em 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_container {
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+  border-radius: 15% 60% 15% 60%;
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+
+.person_photo img {
+  width: 100%;
+  height: auto;
+}
+
+.person_name {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.person_blurb {
+  width: 90%;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.1em;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .overlay_people .scroll {
+    width: 98%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 3em 0.5em;
+  }
+
+  .person {
+    width: 33%;
+    height: auto;
+    display: flex;
+    margin: 1.5em 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .overlay_people .scroll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 3em 0.5em;
+    box-sizing: border-box;
+  }
+
+  .person {
+    width: 33%;
+    height: auto;
+    display: flex;
+    margin: 1.5em 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  #people {
+    font-size: 20px;
+  }
+}
+
+/* -----------------------  LOCATION ------------------------------ */
+
+.location {
+  width: 100%;
+  height: auto;
+}
+
+.location .overlay-location {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.location .overlay-location .left,
+.location .overlay-location .right {
+  width: 95%;
+  color: white;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.85em;
+  padding: 0.5em;
+}
+
+.location .overlay-location .left .contacts,
+.location .overlay-location .left .hours {
+  width: 45%;
+}
+
+.location .overlay-location .left img {
+  width: 1em;
+  height: 1em;
+}
+
+iframe {
+  width: auto;
+  height: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .location .overlay-location {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .location .overlay-location .left,
+  .location .overlay-location .right {
+    width: 49%;
+    height: auto;
+    margin: 0;
+    padding: 2em 1em;
+  }
+
+  .location .overlay-location .left .contacts,
+  .location .overlay-location .left .hours {
+    width: 50%;
+    padding: 0 1em;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .location .overlay-location {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 2em 1em;
+    font-size: 1.2em;
+  }
+
+  .location .overlay-location .left,
+  .location .overlay-location .right {
+    height: auto;
+    margin: 0;
+    padding: 0.5em 2em;
+  }
+
+  .location .overlay-location .left {
+    width: 60%;
+  }
+
+  .location .overlay-location .right {
+    width: 40%;
+  }
+
+  .location .overlay-location .left .contacts,
+  .location .overlay-location .left .hours {
+    width: 50%;
+    padding: 2em 1em;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .location .overlay-location {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 2em 1em;
+    font-size: 1.5em;
+  }
+
+  .location .overlay-location .left {
+    width: 40%;
+  }
+
+  .location .overlay-location .right {
+    width: 60%;
+  }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="cafe.css">
+</head>
+
+<body>
+
+  <section class="section" id="welcome">
+    <div class="overlay">
+      <header>
+        <div class="name">Café</div>
+        <div class="navigation">
+          <a href="cart.html">
+            <div class="li-cart-nav">Cart <div class="cart-nav-no"></div>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="left">
+        <h1>
+          Do you have <br />
+          dinner plans?
+        </h1>
+        <p>Our dining experiences promise to please your taste buds.</p>
+      </div>
+      <img class="img-arrow" width="100" height="100" src="https://img.icons8.com/ios/100/ffffff/double-down--v1.png"
+        alt="double-down--v1" />
+    </div>
+
+  </section>
+
+  <section class="section" id="menu">
+    <div class="scroll" id="scroll-menu">
+
+      <script src="restaurant_data.js"></script>
+      <script src="cafe.js"></script>
+
+      <script>
+        const menuContainer = document.getElementById('scroll-menu');
+        menu.forEach(menuItem => {
+          menuContainer.innerHTML += `
+                              <div class="menu-item-wrapper"> 
+                                 <div class="menu-item">
+                                    <div class="blob" style="background-image: url('${menuItem.image}')"></div>
+                                  </div>
+                                  <div class="blob-caption">
+                                  <div>${menuItem.description}</div> 
+                                  <div>Price: $${menuItem.price}</div>
+                                  <button onclick="addToCart(${menuItem.id})">Add to Cart</button>
+                                  </div>
+                              </div>
+                              
+                            `;
+        });
+
+
+      </script>
+
+    </div>
+  </section>
+
+
+  <section class="section" id="people">
+    <div class="overlay_people">
+      <div class="scroll">
+        <div class="person">
+          <div class="person_photo">
+            <div class="img_container"><img src="images/chef3.jpg" alt="" /></div>
+          </div>
+          <div class="person_name">Sophia "Sophie" Hernandez</div>
+          <div class="person_blurb">
+            "I find joy in cooking for people. Seeing smiles light up as
+            they savor my dishes is what it's all about. Each plate is my
+            way of sharing the love and creating a memorable experience for
+            everyone who walks through the door."
+          </div>
+        </div>
+
+        <div class="person">
+          <div class="person_photo">
+            <div class="img_container"><img src="images/chef11.jpg" alt="" /></div>
+          </div>
+          <div class="person_name">Giovanni "Gio" Rossi</div>
+          <div class="person_blurb">
+            "In my restaurant, I craft culinary tales that tantalize the
+            senses, transforming every plate into a gastronomic journey.
+            Each dish is a canvas, and my kitchen is where I paint with
+            flavors, creating a masterpiece that tells a story with every
+            savory bite."
+          </div>
+        </div>
+
+        <div class="person">
+          <div class="person_photo">
+            <div class="img_container"><img src="images/chef22.jpg" alt="" /></div>
+          </div>
+          <div class="person_name">Jenny Thompson</div>
+          <div class="person_blurb">
+            "As a waitress, I thrive on creating memorable dining
+            experiences. I love connecting with people, recommending
+            delicious dishes, and ensuring every guest leaves with a
+            satisfied smile. It's not just about serving food; it's about
+            making every visit a delightful journey for my customers."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section location" id="location">
+    <div class="overlay-location">
+      <div class="left">
+        <div class="contacts">
+          <p>Contacts:</p>
+          <p><img
+              src="https://img.icons8.com/ffffff/external-kmg-design-detailed-outline-kmg-design/100/external-telephone-hotel-kmg-design-detailed-outline-kmg-design.png"
+              alt="external-telephone-hotel-kmg-design-detailed-outline-kmg-design" />
+            (201) 345-8765</p>
+          <p> <img src="https://img.icons8.com/ffffff/100/email--v1.png" alt="email--v1" />
+            cafe@newyork.com</p>
+          <p> <img src="https://img.icons8.com/ffffff/100/home--v1.png" alt="home--v1" />
+            200 Flanklin Street <br />
+            New York, NY 123456</p>
+        </div>
+        <div class="hours">
+          <p>Hours:</p>
+          <p>Mon 7:00 am - 1:00 am</p>
+          <p>Tue 7:00 am - 1:00 am</p>
+          <p>Wed 7:00 am - 1:00 am</p>
+          <p>Thu 7:00 am - 1:00 am</p>
+          <p>Tue 7:00 am - 3:00 am</p>
+          <p>Sat 9:00 am - 3:00 am</p>
+          <p>Sun 9:00 am - 1:00 am</p>
+        </div>
+      </div>
+      <div class="right">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=200%20Franklin%20street%20Brooklin%20NY%20USA+(My%20Business%20Name)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+            href="https://www.maps.ie/population/">Find on Map</a></iframe>
+      </div>
+  </section>
+
+
+</body>
+
+</html>
