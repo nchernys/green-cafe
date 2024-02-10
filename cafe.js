@@ -39,13 +39,12 @@ function updateCart() {
 function cartPopulate() {
   updateCart();
   const cartSum = document.getElementById("cartList");
-  cartSum.innerHTML = "";
-  const myCartLocal = JSON.parse(localStorage.getItem("cart"));
-  if (myCartLocal.length === 0) {
-    cartSum.innerHTML += `
-        <tr><td class="cart-desc">Your cart is empty... </td></tr>`;
-  }
-  console.log(myCartLocal);
+  cartSum.innerHTML = '';
+  const myCartLocal = JSON.parse(localStorage.getItem("cart")) || [];
+  if (myCartLocal.length === 0) { 
+         cartSum.innerHTML = '<tr><td class="cart-desc">Your cart is empty... </td></tr>';
+  };
+  
   myCartLocal.forEach((cartItem) => {
     cartSum.innerHTML += `
                 <tr> <td class="cart-img"><div id="cart-img-frame"><img src="${cartItem.image}" alt=""> </div></td> 
@@ -61,6 +60,7 @@ function cartPopulate() {
                 </tr>
                 `;
   });
+  
   updateSubTotal();
 }
 
@@ -114,12 +114,14 @@ function updateSubTotal() {
     cartSubTotal += cartItem.price * cartItem.quantity;
   });
   const calcCartSubtotal = document.getElementById("cart-subtotal");
-  calcCartSubtotal.innerText = cartSubTotal;
+  calcCartSubtotal.innerText = cartSubTotal.toFixed(2);
   const checkTip = JSON.parse(localStorage.getItem("tip")) || 0;
   addTip(checkTip);
 }
 
 function addTip(tip) {
+  const myCartLocal = JSON.parse(localStorage.getItem("cart"));
+  if (myCartLocal.length === 0 ) {tip = 0};
   localStorage.setItem("tip", JSON.stringify(tip));
   const selectTip = document.querySelector(".tip-btn-group-options");
   selectTip.style.display = "none";
@@ -131,9 +133,10 @@ function addTip(tip) {
 function calcTotal(tip) {
   updateCart();
   const calcCartSubtotal = document.getElementById("cart-subtotal");
-  const yourTip = (parseInt(calcCartSubtotal.innerText) * tip) / 100;
+  const yourTip = (parseFloat(calcCartSubtotal.innerText) * tip) / 100;
   const calcCartTotal = document.getElementById("cart-total");
-  calcCartTotal.innerText = parseInt(calcCartSubtotal.innerText) + yourTip;
+  const total = parseFloat(calcCartSubtotal.innerText) + yourTip;
+  calcCartTotal.innerText = total.toFixed(2);
 }
 
 function selectTip() {
