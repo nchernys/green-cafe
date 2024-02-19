@@ -1,3 +1,13 @@
+var preloadImage = new Image();
+preloadImage.src = "images/dinner1.jpg";
+var welcomeSection = document.getElementById("welcome");
+
+preloadImage.onload = function () {
+  welcomeSection.style.background =
+    "url('images/dinner1.jpg') no-repeat center";
+  welcomeSection.style.backgroundSize = "cover";
+};
+
 const myCartLocal = JSON.parse(localStorage.getItem("cart"));
 updateCart();
 
@@ -39,12 +49,13 @@ function updateCart() {
 function cartPopulate() {
   updateCart();
   const cartSum = document.getElementById("cartList");
-  cartSum.innerHTML = '';
+  cartSum.innerHTML = "";
   const myCartLocal = JSON.parse(localStorage.getItem("cart")) || [];
-  if (myCartLocal.length === 0) { 
-         cartSum.innerHTML = '<tr><td class="cart-desc">Your cart is empty... </td></tr>';
-  };
-  
+  if (myCartLocal.length === 0) {
+    cartSum.innerHTML =
+      '<tr><td class="cart-desc">Your cart is empty... </td></tr>';
+  }
+
   myCartLocal.forEach((cartItem) => {
     cartSum.innerHTML += `
                 <tr> <td class="cart-img"><div id="cart-img-frame"><img src="${cartItem.image}" alt=""> </div></td> 
@@ -60,7 +71,7 @@ function cartPopulate() {
                 </tr>
                 `;
   });
-  
+
   updateSubTotal();
 }
 
@@ -121,7 +132,9 @@ function updateSubTotal() {
 
 function addTip(tip) {
   const myCartLocal = JSON.parse(localStorage.getItem("cart"));
-  if (myCartLocal.length === 0 ) {tip = 0};
+  if (myCartLocal.length === 0) {
+    tip = 0;
+  }
   localStorage.setItem("tip", JSON.stringify(tip));
   const selectTip = document.querySelector(".tip-btn-group-options");
   selectTip.style.display = "none";

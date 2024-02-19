@@ -14,9 +14,6 @@ body {
 #welcome {
   width: 100%;
   height: auto;
-  background-image: url("images/dinner1.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 header {
@@ -219,26 +216,31 @@ header a {
   width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2em 0;
   font-size: 1em;
+  padding: 3em 0;
 }
 
 #menu .scroll {
+  width: 25em;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   margin: 0 auto;
 }
 
 .menu-item-wrapper {
-  margin: 0.5em 0;
+  width: auto;
+  height: auto;
+  margin: 0.5em auto;
   padding: 0.5em;
 }
 
 .menu-item {
-  width: 17em;
-  height: 17em;
+  width: 8em;
+  height: 8em;
   border-radius: 50em;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 30% 70% 20% 60% / 60% 30% 70% 40%;
@@ -248,8 +250,8 @@ header a {
 }
 
 .blob {
-  width: 14em;
-  height: 14em;
+  width: 6em;
+  height: 6em;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -261,7 +263,7 @@ header a {
   height: 4em;
   margin: 1em 0;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2em;
+  font-size: 0.9em;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -287,14 +289,16 @@ header a {
 
 @media screen and (min-width: 600px) {
   #menu .scroll {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0 1em;
+    width: 48em;
+    margin: 0 auto;
   }
 
+  .menu-item-wrapper {
+    margin: 0.5em 0em;
+  }
   .menu-item {
-    width: 14em;
-    height: 14em;
+    width: 10em;
+    height: 10em;
     margin: 0 0.5em;
   }
 
@@ -302,13 +306,15 @@ header a {
     width: 80%;
     height: 80%;
   }
+
+  .blob-caption {
+    font-size: 1.2em;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   #menu .scroll {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0 1em;
+    width: 70em;
   }
 
   .menu-item {
