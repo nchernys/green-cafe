@@ -6,14 +6,36 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: "Patrick Hand", cursive;
-  font-family: "Afacad", sans-serif;
+  font-family: "Dancing Script", "fallback for dancing";
+  font-family: "Patrick Hand", "fallback";
+  font-family: "Afacad", "fallback";
   background-color: rgb(45, 168, 63);
+}
+
+@font-face {
+  font-family: "fallback";
+  src: local("Arial");
+  size-adjust: 89%;
+  ascent-override: 105%;
+  descent-override: 40%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "fallback for dancing";
+  src: local("Times New Roman");
+  font-style: italic;
+  size-adjust: 100%;
+  ascent-override: 105%;
+  descent-override: 40%;
+  line-gap-override: 5%;
 }
 
 #welcome {
   width: 100%;
   height: auto;
+  background: url(images/dinner1.jpg) no-repeat center;
+  background-size: cover;
 }
 
 header {
@@ -31,7 +53,7 @@ header .name {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script", "fallback for dancing";
   font-size: 2.5em;
 }
 
